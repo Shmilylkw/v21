@@ -4,7 +4,7 @@
 #   System Required: CentOS 7+ / Debian 8+ / Ubuntu 16+
 #   Description: Manage v2-ui
 #   Author: sprov
-#   Github - v2-ui: https://github.com/tszho-t/v2ui
+#   Github - v2-ui:  http://v2ui.axs8.cn/
 #======================================================
 
 red='\033[0;31m'
@@ -89,7 +89,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/tszho-t/v2ui/master/install.sh)
+    bash <(curl -Ls  http://v2ui.axs8.cn/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -108,7 +108,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/tszho-t/v2ui/master/install.sh)
+    bash <(curl -Ls http://v2ui.axs8.cn/install.sh)
     if [[ $? == 0 ]]; then
         echo -e "${green}更新完成，已自动重启面板${plain}"
         exit
@@ -283,7 +283,7 @@ show_log() {
 }
 
 install_bbr() {
-    bash <(curl -L -s https://github.000060000.xyz/tcpx.sh)
+    bash <(curl -L -s http://v2ui.axs8.cn/tcpx.sh)
     if [[ $? == 0 ]]; then
         echo ""
         echo -e "${green}安装 bbr 成功${plain}"
@@ -296,7 +296,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/v2-ui -N --no-check-certificate https://raw.githubusercontent.com/tszho-t/v2ui/master/v2-ui.sh
+    wget -O /usr/bin/v2-ui -N --no-check-certificate http://v2ui.axs8.cn/v2-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
@@ -421,7 +421,7 @@ show_usage() {
 show_menu() {
     echo -e "
   ${green}v2-ui 面板管理脚本${plain}
---- https://blog.sprov.xyz/v2-ui ---
+--- http://v2ui.axs8.cn/v2-ui ---
   ${green}0.${plain} 退出脚本
 ————————————————
   ${green}1.${plain} 安装 v2-ui
